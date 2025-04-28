@@ -1,7 +1,8 @@
 import Image from "next/image";
+import HeroSuggestions from "./herosection-suggestions";
 
 export default function HeroSection() {
-  function IntoItem({ title, description }) {
+  function InfoItem({ title, description }) {
     return (
       <article className="w-full flex flex-col items-center justify-center xl:items-start px-5 py-4 xl:py-5 gap-2 bg-[#1A1A1A] border-[1px] border-[#262626] rounded-lg xl:rounded-[10px] 2xl:rounded-xl">
         <h3 className="text-white text-2xl xl:text-3xl 2xl:text-[40px] font-bold">
@@ -14,6 +15,35 @@ export default function HeroSection() {
     );
   }
 
+  function SuggestionItem({ icon, text }) {
+    return (
+      <article className="w-full bg-[#1A1A1A] flex flex-col gap-4 items-center py-7 px-[14px] relative border-[1px] border-[#262626] rounded-[10px] xl:rounded-xl text-white text-sm xl:text-[16px] 2xl:text-xl font-semibold">
+        <svg
+          className="w-5 h-5 2xl:w-6 2xl:h-6 absolute top-4 right-4"
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.875 21.125L21.125 4.875M21.125 4.875L8.9375 4.875M21.125 4.875V17.0625"
+            stroke="#4D4D4D"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <Image
+          src={icon}
+          width={150}
+          height={150}
+          alt="suggestion icon"
+          className="w-12 h-12 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20"
+        />
+        <p className="text-center">{text}</p>
+      </article>
+    );
+  }
+
   return (
     <section className="mx-4 xl:mx-0">
       <div className="flex flex-col xl:flex-row-reverse gap-16">
@@ -21,13 +51,13 @@ export default function HeroSection() {
           <div className="relative overflow-clip bg-[#1A1A1A] h-[302px] xl:h-full">
             <Image
               src={"/images/HeroSectionImage.png"}
-              height={500}
-              width={500}
+              height={1000}
+              width={1000}
               alt="image"
-              className="w-full h-full z-10 absolute"
+              className="w-full h-full z-10 absolute object-cover"
             />
             <svg
-              className="absolute top-0 left-0 w-full h-full z-0"
+              className="absolute top-0 left-0 w-full z-0"
               viewBox="0 0 358 302"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -935,22 +965,42 @@ export default function HeroSection() {
             </div>
             <div className="flex flex-col gap-3 xl:hidden">
               <div className="flex flex-row gap-3">
-                <IntoItem title={"200+"} description={"Happy Customers"} />
-                <IntoItem
+                <InfoItem title={"200+"} description={"Happy Customers"} />
+                <InfoItem
                   title={"10k+"}
                   description={"Properties For Clients"}
                 />
               </div>
-              <IntoItem title={"16+"} description={"Years of Experience"} />
+              <InfoItem title={"16+"} description={"Years of Experience"} />
             </div>
             <div className="xl:flex flex-row gap-3 hidden ">
-              <IntoItem title={"200+"} description={"Happy Customers"} />
-              <IntoItem title={"10k+"} description={"Properties For Clients"} />
-              <IntoItem title={"16+"} description={"Years of Experience"} />
+              <InfoItem title={"200+"} description={"Happy Customers"} />
+              <InfoItem title={"10k+"} description={"Properties For Clients"} />
+              <InfoItem title={"16+"} description={"Years of Experience"} />
             </div>
           </div>
         </div>
       </div>
+      <HeroSuggestions
+        items={[
+          {
+            text: "Find Your Dream Home",
+            icon: "/icons/find-your-dream-home.png",
+          },
+          {
+            text: "Unlock Property Value",
+            icon: "/icons/unlock-property-value.png",
+          },
+          {
+            text: "Effortless Property Management",
+            icon: "/icons/effortless-property-management.png",
+          },
+          {
+            text: "Smart Investments, Informed Decisions",
+            icon: "/icons/smart-investments-informed-decisions.png",
+          },
+        ]}
+      />
     </section>
   );
 }
