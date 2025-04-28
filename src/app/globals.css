@@ -4,3 +4,7 @@
   --breakpoint-xl: 1440px;
   --breakpoint-2xl: 1920px;
 }
+
+body {
+  background-color: #141414;
+}
