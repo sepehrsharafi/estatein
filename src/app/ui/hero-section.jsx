@@ -1,49 +1,8 @@
 import Image from "next/image";
 import HeroSuggestions from "./herosection-suggestions";
+import InformationItems from "./info-item";
 
 export default function HeroSection() {
-  function InfoItem({ title, description }) {
-    return (
-      <article className="w-full flex flex-col items-center justify-center xl:items-start px-5 py-4 xl:py-5 gap-2 bg-[#1A1A1A] border-[1px] border-[#262626] rounded-lg xl:rounded-[10px] 2xl:rounded-xl">
-        <h3 className="text-white text-2xl xl:text-3xl 2xl:text-[40px] font-bold">
-          {title}
-        </h3>{" "}
-        <p className="text-neutral-400 text-sm xl:text-lg font-medium line-clamp-1">
-          {description}
-        </p>
-      </article>
-    );
-  }
-
-  function SuggestionItem({ icon, text }) {
-    return (
-      <article className="w-full bg-[#1A1A1A] flex flex-col gap-4 items-center py-7 px-[14px] relative border-[1px] border-[#262626] rounded-[10px] xl:rounded-xl text-white text-sm xl:text-[16px] 2xl:text-xl font-semibold">
-        <svg
-          className="w-5 h-5 2xl:w-6 2xl:h-6 absolute top-4 right-4"
-          viewBox="0 0 26 26"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4.875 21.125L21.125 4.875M21.125 4.875L8.9375 4.875M21.125 4.875V17.0625"
-            stroke="#4D4D4D"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <Image
-          src={icon}
-          width={150}
-          height={150}
-          alt="suggestion icon"
-          className="w-12 h-12 xl:w-16 xl:h-16 2xl:w-20 2xl:h-20"
-        />
-        <p className="text-center">{text}</p>
-      </article>
-    );
-  }
-
   return (
     <section className="mx-4 xl:mx-0">
       <div className="flex flex-col xl:flex-row-reverse gap-16">
@@ -963,21 +922,13 @@ export default function HeroSection() {
                 Browse Properties
               </button>
             </div>
-            <div className="flex flex-col gap-3 xl:hidden">
-              <div className="flex flex-row gap-3">
-                <InfoItem title={"200+"} description={"Happy Customers"} />
-                <InfoItem
-                  title={"10k+"}
-                  description={"Properties For Clients"}
-                />
-              </div>
-              <InfoItem title={"16+"} description={"Years of Experience"} />
-            </div>
-            <div className="xl:flex flex-row gap-3 hidden ">
-              <InfoItem title={"200+"} description={"Happy Customers"} />
-              <InfoItem title={"10k+"} description={"Properties For Clients"} />
-              <InfoItem title={"16+"} description={"Years of Experience"} />
-            </div>
+            <InformationItems
+              items={[
+                { description: "Happy Customers", title: "200+" },
+                { description: "Properties For Clients", title: "10k+" },
+                { description: "Years of Experience", title: "16+" },
+              ]}
+            />
           </div>
         </div>
       </div>
