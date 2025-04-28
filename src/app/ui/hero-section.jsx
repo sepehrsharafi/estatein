@@ -3,11 +3,11 @@ import Image from "next/image";
 export default function HeroSection() {
   function IntoItem({ title, description }) {
     return (
-      <article className="w-full flex flex-col items-center xl:items-start px-5 py-4 xl:py-5 gap-2 bg-[#1A1A1A] border-[1px] border-[#262626] rounded-lg xl:rounded-[10px] 2xl:rounded-xl">
+      <article className="w-full flex flex-col items-center justify-center xl:items-start px-5 py-4 xl:py-5 gap-2 bg-[#1A1A1A] border-[1px] border-[#262626] rounded-lg xl:rounded-[10px] 2xl:rounded-xl">
         <h3 className="text-white text-2xl xl:text-3xl 2xl:text-[40px] font-bold">
           {title}
         </h3>{" "}
-        <p className="text-neutral-400 text-sm xl:text-lg font-medium">
+        <p className="text-neutral-400 text-sm xl:text-lg font-medium line-clamp-1">
           {description}
         </p>
       </article>
@@ -24,7 +24,7 @@ export default function HeroSection() {
               height={500}
               width={500}
               alt="image"
-              className="w-full h-full z-50 absolute"
+              className="w-full h-full z-10 absolute"
             />
             <svg
               className="absolute top-0 left-0 w-full h-full z-0"
@@ -768,7 +768,7 @@ export default function HeroSection() {
           </div>
 
           <svg
-            className="absolute w-28 h-28 xl:w-32 xl:h-32 2xl:w-44 2xl:h-44 -bottom-14 xl:top-36 left-0 xl:-left-16 2xl:-left-22"
+            className="absolute w-28 h-28 xl:w-32 xl:h-32 2xl:w-44 2xl:h-44 -bottom-14 xl:top-36 left-0 xl:-left-16 2xl:-left-22 z-20"
             viewBox="0 0 117 117"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
