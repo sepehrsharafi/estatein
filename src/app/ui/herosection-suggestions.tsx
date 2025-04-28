@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export default function HeroSuggestions({ items }: { items: [] }) {
+export default function HeroSuggestions({
+  items,
+}: {
+  items: Array<{ text: string; icon: string }>;
+}) {
   function SuggestionItem({ icon, text }: { icon: string; text: string }) {
     return (
       <article className="w-full bg-[#1A1A1A] flex flex-col gap-4 items-center py-7 px-[14px] relative border-[1px] border-[#262626] rounded-[10px] xl:rounded-xl text-white text-sm xl:text-[16px] 2xl:text-xl font-semibold">
