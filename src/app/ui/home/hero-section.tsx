@@ -1,6 +1,6 @@
 import Image from "next/image";
-import HeroSuggestions from "./herosection-suggestions";
-import InformationItems from "./info-item";
+import HeroSuggestions from "../herosection-suggestions";
+import InformationItems from "../info-item";
 
 export default function HeroSection() {
   return (
