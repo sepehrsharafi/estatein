@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Navbar from "./ui/root-layout/Navbar";
 
-// Font files can be colocated inside of `pages`
 const urbanist = localFont({
   src: "./fonts/urbanist/Urbanist-VariableFont_wght.ttf",
 });
@@ -22,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className} antialiased`}>{children}</body>
+      <body className={`${urbanist.className} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
