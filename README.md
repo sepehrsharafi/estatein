@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Estatein, A Real Estate focused Web App built with Next.js, Tailwind, and TypeScript
 
-## Getting Started
+This project is a website made for a real estate business developed using the latest versions of Next.js, Tailwind CSS, and TypeScript. It is based on the dark theme UI template from [Produce UI Community on Figma](https://www.figma.com/design/2JqbSdZfePGVO6YZzUA0XM/Real-Estate-Business-Website-UI-Template---Dark-Theme-%7C-Produce-UI--Community-?node-id=45-2&t=XCEmdiEG9VUlzx32-1).
 
-First, run the development server:
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+## Technologies
+
+- [Next.js](https://nextjs.org/): A React framework for building server-rendered and statically generated web applications.
+- [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapid UI development.
+- [TypeScript](https://www.typescriptlang.org/): A superset of JavaScript that adds static typing for better code quality and maintainability.
+
+## Features
+
+- Responsive design with a dark theme.
+- Pages such as Home, Property Listings, Property Details, About Us, and Contact.
+- Built with modern web development best practices.
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sepehrsharafi/estatein
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd estatein
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+   or
+
+   ```bash
+   yarn install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   or
+   ```bash
+   yarn dev
+   ```
+
+For production build:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To start the production server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
 
-## Learn More
+- The application uses Next.js for server-side rendering and routing.
+- Styling is done using Tailwind CSS utility classes.
+- TypeScript is used for type safety throughout the codebase.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This application can be easily deployed to [Vercel](https://vercel.com/), which is optimized for Next.js projects. Follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Install Vercel CLI:
 
-## Deploy on Vercel
+   ```bash
+   npm install -g vercel
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Login to Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   vercel login
+   ```
+
+3. Deploy the project:
+   ```bash
+   vercel
+   ```
+   Follow the prompts to complete the deployment.
+
+Alternatively, you can deploy to other platforms like Netlify or AWS, but Vercel is recommended for seamless Next.js integration.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Produce UI Community](https://www.figma.com/design/2JqbSdZfePGVO6YZzUA0XM/Real-Estate-Business-Website-UI-Template---Dark-Theme-%7C-Produce-UI--Community-?node-id=45-2&t=XCEmdiEG9VUlzx32-1) for providing the Figma design template.
+- Open-source libraries and tools used in this project (e.g., Next.js, Tailwind CSS, TypeScript).
