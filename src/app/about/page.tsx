@@ -1,6 +1,6 @@
 import React from "react";
-import HeroSection from "../ui/about-us/hero-section";
-import OurValues from "../ui/about-us/our-values";
+import HeroSection from "../ui/about/hero-section";
+import OurValues from "../ui/about/our-values";
 
 export default function Page() {
   return (
