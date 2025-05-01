@@ -4,7 +4,7 @@ import InformationItems from "../info-item";
 
 export default function HeroSection() {
   return (
-    <section className="mx-4 xl:mx-0">
+    <section className="mx-4 xl:mx-0 mt-14 md:mt-0 ">
       <div className="flex flex-col xl:flex-row-reverse gap-16">
         <div className="w-full xl:h-[622px] 2xl:h-[814px] relative border-[1px] xl:border-none border-[#262626] rounded-xl xl:rounded-none">
           <div className="relative overflow-clip bg-[#1A1A1A] h-[302px] xl:h-full">

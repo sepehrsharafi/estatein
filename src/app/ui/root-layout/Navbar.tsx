@@ -18,6 +18,7 @@ const Navbar = () => {
 
   return (
     <>
+      <div className=" h-[68px] md:h-[77px]  2xl:h-[100px]"></div>
       <nav className="md:hidden w-full fixed top-0 h-[68px] bg-[#1A1A1A] px-4 py-5 flex justify-between items-center z-40 ">
         <Image
           src={"/images/logo/logo.png"}
