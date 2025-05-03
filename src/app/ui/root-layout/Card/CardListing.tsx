@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Button from "../Button";
 import PropertiesCard from "./PropertiesCard";
@@ -7,6 +8,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
+
 interface CardListingProps {
   title: string;
   description?: string;

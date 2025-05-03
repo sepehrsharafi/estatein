@@ -1,4 +1,5 @@
 import HeroSection from "../ui/hero-section";
+import InformationSection from "../ui/services/information-section";
 
 export default function Page() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
           },
         ]}
       />
+      <InformationSection />
     </main>
   );
 }
