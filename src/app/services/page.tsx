@@ -1,6 +1,7 @@
 import { title } from "process";
 import HeroSection from "../ui/hero-section";
 import InformationSection from "../ui/services/information-section";
+import InformationSectionAlt from "../ui/services/information-section-alt";
 
 export default function Page() {
   return (
@@ -106,6 +107,8 @@ export default function Page() {
             "Ready to experience hassle-free property management? Explore our Property Management Service categories and let us handle the complexities while you enjoy the benefits of property ownership.",
         }}
       />
+
+      <InformationSectionAlt />
     </main>
   );
 }
