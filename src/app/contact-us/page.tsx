@@ -1,3 +1,4 @@
+import ExploreSection from "../ui/contact-us/explore-section";
 import HeroSection from "../ui/hero-section";
 
 export default function Page() {
@@ -25,6 +26,7 @@ export default function Page() {
           },
         ]}
       />
+      <ExploreSection />
     </main>
   );
 }
