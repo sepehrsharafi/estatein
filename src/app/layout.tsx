@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import Navbar from "./ui/root-layout/Navbar";
+import Navbar from "./ui/root-layout/layout/Navbar";
+import Footer from "./ui/root-layout/layout/Footer";
 
 const urbanist = localFont({
   src: "./fonts/urbanist/Urbanist-VariableFont_wght.ttf",
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${urbanist.className} antialiased`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
