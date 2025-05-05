@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
+import { NavigationOptions } from "swiper/types";
 
 interface CardListingProps {
   title: string;
@@ -22,23 +23,25 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
   const totalSlides = cards.length || 12;
-
+  const isDesktop = window.innerWidth >= 1024;
   useEffect(() => {
-    const isDesktop = window.innerWidth >= 1024;
-    setCurrentSlide(isDesktop ? 3 : 1);
+    if (
+      swiperRef.current &&
+      prevRef.current &&
+      nextRef.current &&
+      typeof swiperRef.current.params.navigation === "object"
+    ) {
+      const navigation = swiperRef.current.params
+        .navigation as NavigationOptions;
+
+      navigation.prevEl = prevRef.current;
+      navigation.nextEl = nextRef.current;
+
+      swiperRef.current.navigation.destroy();
+      swiperRef.current.navigation.init();
+      swiperRef.current.navigation.update();
+    }
   }, []);
-
-  const handlePrev = () => {
-    if (!swiperRef.current) return;
-    swiperRef.current.slidePrev();
-    setCurrentSlide((prev) => Math.max(1, prev - 1));
-  };
-
-  const handleNext = () => {
-    if (!swiperRef.current) return;
-    swiperRef.current.slideNext();
-    setCurrentSlide((prev) => Math.min(totalSlides, prev + 1));
-  };
 
   return (
     <section className="flex flex-col gap-10 mx-4 mt-20 xl:mx-[80px] 2xl:mx-[162px]">
@@ -60,6 +63,7 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
         <Swiper
           spaceBetween={16}
           slidesPerView={1}
+          slidesPerGroup={1}
           modules={[Navigation]}
           speed={300}
           resistanceRatio={0.85}
@@ -68,14 +72,20 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
           followFinger={true}
           grabCursor={true}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: {
+              slidesPerView: 2,
+              slidesPerGroup: 1,
+            },
+            1024: {
+              slidesPerView: 3,
+              slidesPerGroup: 1,
+            },
           }}
           onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => {
             setCurrentSlide(swiper.activeIndex + 1);
-            swiper.on("slideChange", () => {
-              setCurrentSlide(swiper.activeIndex + 1);
-            });
           }}
           navigation={{
             prevEl: prevRef.current,
@@ -96,13 +106,12 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
           View All Properties
         </Button>
         <p className="text-sm hidden md:block text-white">
-          {String(currentSlide).padStart(2, "0")} of{" "}
-          {String(totalSlides).padStart(2, "0")}
+          {String(isDesktop ? currentSlide + 2 : currentSlide).padStart(2, "0")}{" "}
+          of {String(totalSlides).padStart(2, "0")}
         </p>
         <div className="flex flex-row items-center text-white gap-2">
           <button
             ref={prevRef}
-            onClick={handlePrev}
             className="p-2.5 cursor-pointer bg-[#141414] border-[#262626] border hover:bg-[#292929] rounded-full"
           >
             <Image
@@ -118,7 +127,6 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
           </p>
           <button
             ref={nextRef}
-            onClick={handleNext}
             className="p-2.5 cursor-pointer bg-[#141414] border-[#262626] border hover:bg-[#292929] rounded-full"
           >
             <Image
