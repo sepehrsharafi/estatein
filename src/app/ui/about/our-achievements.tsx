@@ -11,7 +11,10 @@ export default function OurAchievements() {
       >
         {infoItems.map(
           (item: { title: string; description: string }, index) => (
-            <div className="bg-[#1A1A1A] gap-2.5 p-2 rounded-[14px] xl:rounded-[16px]">
+            <div
+              key={index}
+              className="bg-[#1A1A1A] gap-2.5 p-2 rounded-[14px] xl:rounded-[16px]"
+            >
               <article
                 key={index}
                 className="h-full bg-[#141414] flex flex-col gap-4 xl:gap-5 p-6 xl:p-10 border-[1px] border-[#262626] rounded-[10px] xl:rounded-[12px]"

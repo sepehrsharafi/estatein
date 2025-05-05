@@ -11,7 +11,7 @@ export default function EstateinExperience() {
         {items.map((item, index) => (
           <article key={index} className="flex flex-col text-white h-full">
             <span className="font-medium text-base 2xl:text-xl border-l-[1px] xl:border-l-[2px] border-[#703BF7] py-3 px-4">
-              Step 01
+              Step 0{index + 1}
             </span>
             <div className="h-full self-stretch p-7 bg-gradient-to-br from-violet-500/25 to-violet-600/0 rounded-tr-[10px] rounded-bl-[10px] rounded-br-[10px] border-[1px] xl:border-[2px] border-violet-500/70 inline-flex flex-col justify-start items-start gap-3.5">
               <div className="self-stretch justify-start text-white text-lg xl:text-xl 2xl:text-2xl font-semibold font-['Urbanist'] leading-relaxed">
