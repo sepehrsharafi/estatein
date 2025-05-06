@@ -26,10 +26,14 @@ const Navbar = () => {
           width={93}
           height={28}
         />
-        <button onClick={() => setMenu(!menu)}>
+        <button
+          onClick={() => {
+            setMenu(!menu);
+          }}
+        >
           {menu ? (
             <Image
-              src={"/icons/hamburger-menu.svg"}
+              src={"/icons/hamburger-menu-close.svg"}
               alt="menu"
               width={28}
               height={28}
@@ -37,7 +41,7 @@ const Navbar = () => {
             />
           ) : (
             <Image
-              src={"/icons/hamburger-menu-close.svg"}
+              src={"/icons/hamburger-menu.svg"}
               alt="menu"
               width={28}
               height={28}
@@ -49,7 +53,7 @@ const Navbar = () => {
 
       <div
         className={`fixed md:hidden rounded-xl top-[68px] left-0 h-screen w-3/4 flex flex-col  items-end bg-[#141414] z-30 transform transition-transform duration-300 ease-in-out ${
-          menu ? "-translate-x-full" : "translate-x-0 "
+          menu ? "translate-x-0 " : "-translate-x-full"
         }`}
       >
         {navLinks.map((link) => {
