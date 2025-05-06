@@ -74,64 +74,104 @@ const Footer = () => {
         </section>
         <section className="flex flex-row flex-wrap md:gap-10 w-full justify-between  2xl:gap-20 xl:flex-nowrap gap-4">
           <div className="flex flex-col gap-2 w-[160px] xl:border-none  border-r-2 border-b-2  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-            <p className="text-[#999999]">Home</p>{" "}
+            <Link href={"/"} className="text-[#999999]">
+              Home
+            </Link>
             <div className="flex flex-col gap-2 text-white ">
-              <p>Hero section</p>
-              <p>Features</p>
-              <p>Properties</p>
-              <p>Testimonials</p>
-              <p>FAQ’s</p>
+              <Link href={""}>Hero section</Link>
+              <Link href={""}>Features</Link>
+              <Link href={""}>Properties</Link>
+              <Link href={""}>Testimonials</Link>
+              <Link href={""}>FAQ’s</Link>
             </div>
           </div>
           <div className="flex flex-col gap-2 w-[160px] xl:border-none border-b-2  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-            <p className="text-[#999999]">About Us</p>{" "}
+            <Link href={"/about"} className="text-[#999999]">
+              About Us
+            </Link>{" "}
             <div className="flex flex-col gap-2 text-white ">
-              <p>Our Story</p>
-              <p>Our Works</p>
-              <p>How It Works</p>
-              <p>Our Team</p>
-              <p>Our Clients</p>
+              <Link href={""}>Our Story</Link>
+              <Link href={""}>Our Works</Link>
+              <Link href={""}>How It Works</Link>
+              <Link href={""}>Our Team</Link>
+              <Link href={""}>Our Clients</Link>
             </div>
           </div>
           <div className="flex flex-col xl:hidden h-fit gap-2 w-[160px] xl:border-none  border-r-2  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
             <div className="flex flex-col h-fit gap-2 w-[160px] border-b-2 border-none  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-              <p className="text-[#999999]">Properties</p>{" "}
+              <Link href={"/properties"} className="text-[#999999]">
+                Properties
+              </Link>{" "}
               <div className="flex flex-col gap-2 text-white ">
-                <p className="text-[#FFFFFF]">Portfolio</p>
-                <p className="text-[#FFFFFF]">Categories</p>
+                <Link href={""} className="text-[#FFFFFF]">
+                  Portfolio
+                </Link>
+                <Link href={""} className="text-[#FFFFFF]">
+                  Categories
+                </Link>
               </div>
             </div>
             <div className="flex flex-col gap-2 w-[160px] border-b-2 border-none  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-              <p className="text-[#999999]">Contact Us</p>{" "}
+              <Link href={"/contact"} className="text-[#999999]">
+                Contact Us
+              </Link>{" "}
               <div className="flex flex-col gap-2 text-white ">
-                <p className="text-[#FFFFFF]">Contact Form</p>
-                <p className="text-[#FFFFFF]">Our Offices</p>
+                <Link href={""} className="text-[#FFFFFF]">
+                  Contact Form
+                </Link>
+                <Link href={""} className="text-[#FFFFFF]">
+                  Our Offices
+                </Link>
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-2 w-[160px] border-b-2 xl:border-none  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-            <p className="text-[#999999]">Services</p>{" "}
+            <Link href={"/services"} className="text-[#999999]">
+              Services
+            </Link>{" "}
             <div className="flex flex-col gap-2 text-white ">
-              <p className="text-[#FFFFFF]">Valuation Mastery</p>
-              <p className="text-[#FFFFFF]">Strategic Marketing</p>
-              <p className="text-[#FFFFFF]">Negotiation Wizardry</p>
-              <p className="text-[#FFFFFF]">Closing Success</p>
-              <p className="text-[#FFFFFF]">Property Management</p>
+              <Link href={""} className="text-[#FFFFFF]">
+                Valuation Mastery
+              </Link>
+              <Link href={""} className="text-[#FFFFFF]">
+                Strategic Marketing
+              </Link>
+              <Link href={""} className="text-[#FFFFFF]">
+                Negotiation Wizardry
+              </Link>
+              <Link href={""} className="text-[#FFFFFF]">
+                Closing Success
+              </Link>
+              <Link href={""} className="text-[#FFFFFF]">
+                Property Management
+              </Link>
             </div>
           </div>
           <div className="hidden xl:flex flex-col h-fit gap-2 w-[160px] border-b-2 border-none  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-            <p className="text-[#999999]">Properties</p>{" "}
+            <Link href={"/properties"} className="text-[#999999]">
+              Properties
+            </Link>{" "}
             <div className="flex flex-col gap-2 text-white ">
-              <p className="text-[#FFFFFF]">Portfolio</p>
-              <p className="text-[#FFFFFF]">Categories</p>
+              <Link href={""} className="text-[#FFFFFF]">
+                Portfolio
+              </Link>
+              <Link href={""} className="text-[#FFFFFF]">
+                Categories
+              </Link>
             </div>
           </div>
           <div className="hidden xl:flex flex-col gap-2 w-[160px] border-b-2 border-none  border-[#262626] xl:w-fit xl:text-nowrap py-[20px]">
-            <p className="text-[#999999]">Contact Us</p>{" "}
+            <Link href={"/contact"} className="text-[#999999]">
+              Contact Us
+            </Link>{" "}
             <div className="flex flex-col gap-2 text-white ">
-              <p className="text-[#FFFFFF]">Contact Form</p>
-              <p className="text-[#FFFFFF]">Our Offices</p>
+              <Link href={""} className="text-[#FFFFFF]">
+                Contact Form
+              </Link>
+              <Link href={""} className="text-[#FFFFFF]">
+                Our Offices
+              </Link>
             </div>
           </div>
         </section>
