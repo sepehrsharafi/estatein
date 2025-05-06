@@ -1,9 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../Button";
 
 const Footer = () => {
   return (
     <>
+      <section className="px-4 relative flex flex-col md:flex-row mt-12  py-12 md:py-16 md:px-20 overflow-hidden  md:justify-between">
+        <div className="flex flex-col md:max-w-[980px] ">
+          <h3 className=" text-[28px] md:text-[38px] 2xl:text-[48px] text-white  z-10">
+            Start Your Real Estate Journey Today
+          </h3>
+          <p className="text-[#999] text-sm md:text-[16px] 2xl:text-[18px] mt-1.5 z-10">
+            Your dream property is just a click away. Whether you're looking for
+            a new home, a strategic investment, or expert real estate advice,
+            Estatein is here to assist you every step of the way. Take the first
+            step towards your real estate goals and explore our available
+            properties or get in touch with our team for personalized
+            assistance.
+          </p>
+        </div>
+
+        <Button variant="primary" className="mt-8 z-10 h-fit">
+          Explore Properties
+        </Button>
+        <Image
+          src={"/images/abstract-down.png"}
+          width={398}
+          className="absolute z-0 top-[220px] left-[22px] md:hidden"
+          height={217}
+          alt="abstract"
+        />
+        <Image
+          src={"/images/abstract-up.png"}
+          width={284}
+          className="absolute z-0 bottom-[0px] left-[0px] md:hidden"
+          height={522}
+          alt="abstract"
+        />
+        <Image
+          src={"/images/abstract-down.png"}
+          width={570}
+          className="absolute z-0  right-[0px]  bottom-[0px] hidden md:block"
+          height={310}
+          alt="abstract"
+        />
+        <Image
+          src={"/images/abstract-down.png"}
+          width={570}
+          className="absolute z-0  left-[0px]  bottom-[0px] hidden md:block -rotate-y-180"
+          height={310}
+          alt="abstract"
+        />
+      </section>
       <footer className="flex flex-col md:flex-row  items-start px-4 xl:px-20 w-full gap-14">
         <section className="py-12 px-4  w-full flex flex-col gap-5 xl:w-[326px]">
           <div className="w-[113px] h-[34px] relative ">
