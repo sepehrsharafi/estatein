@@ -22,8 +22,18 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
+  const [isDesktop, setIsDesktop] = useState(false);
   const totalSlides = cards.length || 12;
-  const isDesktop = window.innerWidth >= 1024;
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     if (
       swiperRef.current &&
