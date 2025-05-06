@@ -83,7 +83,7 @@ const Navbar = () => {
             src={"/images/logo/logo.png"}
             alt="logo"
             fill
-            className="object-contain"
+            style={{ objectFit: "contain" }}
           />
         </div>
 

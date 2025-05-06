@@ -11,7 +11,7 @@ const Footer = () => {
               src={"/images/logo/logo.png"}
               alt="logo"
               fill
-              objectFit="contain"
+              style={{ objectFit: "contain" }}
             />
           </div>
 

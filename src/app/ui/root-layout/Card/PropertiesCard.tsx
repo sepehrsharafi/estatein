@@ -32,7 +32,7 @@ const PropertiesCard = () => {
               alt="bedroom"
               width={16}
               height={16}
-              className="object-contain"
+              style={{ objectFit: "contain" }}
             />
             <p className="text-[14px]">4 - Bedroom</p>
           </div>
@@ -44,7 +44,7 @@ const PropertiesCard = () => {
               alt="3-bathroom"
               width={16}
               height={16}
-              className="object-contain"
+              style={{ objectFit: "contain" }}
             />
             <p className="text-[14px]">3-Bathroom</p>
           </div>
@@ -56,7 +56,7 @@ const PropertiesCard = () => {
               alt="villa"
               width={16}
               height={16}
-              className="object-contain"
+              style={{ objectFit: "contain" }}
             />
             <p className="text-[14px]">villa</p>
           </div>
