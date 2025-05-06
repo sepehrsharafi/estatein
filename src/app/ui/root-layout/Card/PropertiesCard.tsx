@@ -10,7 +10,7 @@ const PropertiesCard = () => {
         <Image
           src={"/images/image.png"}
           alt="featured"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
           fill
           className="rounded-t-[8px] object-cover"
         />
