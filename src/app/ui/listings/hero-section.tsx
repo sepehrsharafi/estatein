@@ -1,7 +1,7 @@
 export default function HeroSection() {
   return (
-    <section className="flex flex-col  gap-5 mx-4 xl:mx-20 2xl:mx-40 my-6 xl:my-20">
-      <div className="flex flex-col gap-2 mb-4 xl:mb-10 2xl:mb-12">
+    <section className="bg-gradient-to-br from-neutral-800 to-neutral-800/0 flex flex-col xl:-mb-32 gap-5 px-4 xl:px-20 2xl:px-40 py-12 xl:py-32">
+      <div className="flex flex-col gap-2">
         <h1 className="text-white text-3xl font-semibold xl:text-4xl 2xl:text-5xl">
           Navigating the Estatein Experience
         </h1>

@@ -12,13 +12,12 @@ export default function Filter() {
             name=""
             id=""
           />
-          <button className="flex flex-row-reverse items-center w-fit gap-2 px-5 py-3.5 bg-violet-600 rounded-lg">
-            <span className="hidden xl:block font-medium w-full text-base text-white">
+          <button className="flex flex-row-reverse items-center w-fit gap-2 px-6 py-4.5 bg-violet-600 rounded-lg">
+            <span className="hidden xl:block font-medium w-full text-base 2xl:text-lg text-white whitespace-nowrap">
               Find Property
             </span>
             <svg
-              width="20"
-              height="20"
+              className="w-5 h-5 2xl:w-7 2xl:h-7"
               viewBox="0 0 20 20"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
