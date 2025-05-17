@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Features() {
-  function Feature() {
+  function Feature({ text }: { text: string }) {
     return (
       <article className="flex flex-row items-center bg-gradient-to-l from-zinc-900/0 to-zinc-900 py-2.5 px-3 xl:py-3.5 xl:px-4 2xl:px-4.5 2xl:py-6 gap-2.5 border-l-[1.5px] border-[#703BF7]">
         <svg
@@ -20,7 +20,7 @@ export default function Features() {
           />
         </svg>
         <p className="text-neutral-400 text-sm xl:text-base 2xl:text-lg font-medium">
-          Expansive oceanfront terrace for outdoor entertaining
+          {text}
         </p>
       </article>
     );
@@ -31,8 +31,11 @@ export default function Features() {
         Key Features and Amenities
       </h2>
       <div className="flex flex-col gap-4.5 xl:gap-5 2xl:gap-7.5">
-        <Feature /> <Feature /> <Feature /> <Feature /> <Feature /> <Feature />
-        <Feature />
+        <Feature text="Expansive oceanfront terrace for outdoor entertaining" />
+        <Feature text="Gourmet kitchen with top-of-the-line appliances" />
+        <Feature text="Private beach access for morning strolls and sunset views" />
+        <Feature text="Master suite with a spa-inspired bathroom and ocean-facing balcony" />
+        <Feature text="Private garage and ample storage space" />
       </div>
     </section>
   );
