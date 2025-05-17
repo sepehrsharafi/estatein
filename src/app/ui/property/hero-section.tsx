@@ -1,3 +1,4 @@
+import Description from "./description";
 import ImageGallery from "./image-gallery";
 
 export default function HeroSection() {
@@ -38,6 +39,7 @@ export default function HeroSection() {
         </div>
       </div>
       <ImageGallery />
+      <Description />
     </section>
   );
 }
