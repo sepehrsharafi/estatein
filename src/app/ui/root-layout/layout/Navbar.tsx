@@ -90,7 +90,6 @@ const Navbar = () => {
             style={{ objectFit: "contain" }}
           />
         </div>
-
         <div className="flex flex-row gap-6 ">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -109,9 +108,9 @@ const Navbar = () => {
             );
           })}
         </div>
-        <Button variant="secondary">
-          <Link href={"/contact"}>Contact Us</Link>
-        </Button>
+        <Link href={"/contact"}>
+          <Button variant="secondary">Contact Us</Button>
+        </Link>
       </nav>
     </>
   );
