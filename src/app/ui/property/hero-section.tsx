@@ -1,10 +1,11 @@
 import Description from "./description";
+import Features from "./features";
 import ImageGallery from "./image-gallery";
 
 export default function HeroSection() {
   return (
-    <section>
-      <div className="flex flex-col xl:flex-row items-center gap-2 xl:gap-5 w-full my-6">
+    <section className="flex flex-col gap-10">
+      <div className="flex flex-col xl:flex-row items-center gap-2 xl:gap-5 w-full">
         <h1 className="text-white text-xl xl:text-2xl 2xl:text-3xl font-semibold text-nowrap">
           Seaside Serenity Villa
         </h1>
@@ -39,7 +40,10 @@ export default function HeroSection() {
         </div>
       </div>
       <ImageGallery />
-      <Description />
+      <div className="flex flex-col xl:flex-row gap-5">
+        <Description />
+        <Features />
+      </div>
     </section>
   );
 }

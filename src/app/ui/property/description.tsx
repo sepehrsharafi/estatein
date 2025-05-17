@@ -2,10 +2,12 @@ import React from "react";
 
 export default function Description() {
   return (
-    <section className="flex flex-col gap-5 divide-y-2 pb-5 divide-neutral-800 border-[1px] border-[#262626] rounded-[10px] p-5">
-      <div className="pb-5">
-        <h2 className="text-white text-lg font-semibold">Description</h2>
-        <p className="text-neutral-400 text-sm font-medium">
+    <section className="flex flex-col h-fit gap-5 divide-y-2 pb-5 w-full divide-neutral-800 border-[1px] border-[#262626] rounded-[10px] 2xl:rounded-[12px] p-5 xl:p-10 2xl:p-12.5">
+      <div className="flex flex-col gap-2.5 pb-5">
+        <h2 className="text-white text-lg xl:text-xl 2xl:text-2xl font-semibold">
+          Description
+        </h2>
+        <p className="text-neutral-400 text-sm xl:text-base 2xl:text-lg font-medium">
           Discover your own piece of paradise with the Seaside Serenity Villa. T
           With an open floor plan, breathtaking ocean views from every room, and
           direct access to a pristine sandy beach, this property is the epitome
