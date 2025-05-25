@@ -1,5 +1,4 @@
 import { ClientSaysCard } from "@/mock/what-Our-Clients-Say";
-import Image from "next/image";
 const WhatOurClientsSaysCard = ({ card }: { card: ClientSaysCard }) => {
   return (
     <article className="flex flex-col gap-4 p-6 rounded-xl bg-[#141414]  border-[#262626] border-[1px] hover:bg-[#292929] text-white w-full">
