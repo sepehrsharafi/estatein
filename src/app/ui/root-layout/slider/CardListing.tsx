@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Button from "../Button";
-import PropertiesCard from "./PropertiesCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -10,20 +9,33 @@ import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { NavigationOptions } from "swiper/types";
+import { Card } from "@/mock/featured-Properties";
+import { ClientSaysCard } from "@/mock/what-Our-Clients-Say";
+import PropertiesCard from "./Cards/PropertiesCard";
+import WhatOurClientsSaysCard from "./Cards/WhatOurClientsSay";
 
 interface CardListingProps {
   title: string;
   description?: string;
-  cards?: Array<Record<string, string | number>>;
+  cards: Card[] | ClientSaysCard[];
+}
+function isCardArray(cards: Card[] | ClientSaysCard[]): cards is Card[] {
+  return cards.length > 0 && "price" in cards[0];
 }
 
-const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
+function isClientSaysCardArray(
+  cards: Card[] | ClientSaysCard[]
+): cards is ClientSaysCard[] {
+  return cards.length > 0 && "stars" in cards[0];
+}
+
+const CardListing = ({ title, description, cards }: CardListingProps) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isDesktop, setIsDesktop] = useState(false);
-  const totalSlides = cards.length || 12;
+  const totalSlides = cards.length;
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
@@ -52,7 +64,7 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
       swiperRef.current.navigation.update();
     }
   }, []);
-
+  console.log(typeof cards);
   return (
     <section className="flex flex-col gap-10 mx-4 mt-20 xl:mx-[80px] 2xl:mx-[162px]">
       <div className="flex flex-row justify-between items-center">
@@ -103,11 +115,18 @@ const CardListing = ({ title, description, cards = [] }: CardListingProps) => {
             disabledClass: "opacity-50 cursor-not-allowed",
           }}
         >
-          {[...Array(totalSlides)].map((_, index) => (
-            <SwiperSlide key={index}>
-              <PropertiesCard />
-            </SwiperSlide>
-          ))}
+          {isCardArray(cards) &&
+            cards.map((card, index) => (
+              <SwiperSlide key={index}>
+                <PropertiesCard card={card} />
+              </SwiperSlide>
+            ))}
+          {isClientSaysCardArray(cards) &&
+            cards.map((card, index) => (
+              <SwiperSlide key={index}>
+                <WhatOurClientsSaysCard card={card} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
 
