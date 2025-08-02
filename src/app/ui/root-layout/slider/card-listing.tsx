@@ -9,10 +9,10 @@ import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { NavigationOptions } from "swiper/types";
-import { Card } from "@/mock/featured-Properties";
-import { ClientSaysCard } from "@/mock/what-Our-Clients-Say";
-import PropertiesCard from "./Cards/PropertiesCard";
-import WhatOurClientsSaysCard from "./Cards/WhatOurClientsSay";
+import { Card } from "@/mock/featured-properties";
+import { ClientSaysCard } from "@/mock/what-our-clients-say";
+import PropertiesCard from "./Cards/properties";
+import WhatOurClientsSaysCard from "./Cards/what-our-clients-say";
 
 interface CardListingProps {
   title: string;
