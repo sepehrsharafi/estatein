@@ -1,13 +1,14 @@
 import HeroSection from "./ui/home/hero-section";
-import CardListing from "./ui/root-layout/slider/CardListing";
-import { cards } from "@/mock/featured-Properties";
-import { clientSaysCard } from "@/mock/what-Our-Clients-Say";
+import CardListing from "./ui/root-layout/Slider/card-listing";
+import { cards } from "@/mock/featured-properties";
+import { clientSaysCard } from "@/mock/what-our-clients-say";
 
 export default function Page() {
   return (
-    <main>
+    <>
       <HeroSection />
-      <CardListing
+      <Slider
+        options={OPTIONS}
         title="Featured Properties"
         description="Explore our handpicked selection of featured properties. Each
               listing offers a glimpse into exceptional homes and investments
@@ -23,6 +24,6 @@ export default function Page() {
         title="Frequently Asked Questions"
         description="Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way."
       /> */}
-    </main>
+    </>
   );
 }
