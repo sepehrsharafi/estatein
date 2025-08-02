@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Badge from "../Badge";
-import Button from "../../Button";
-import { ReactElement } from "react";
-import { Card } from "@/mock/featured-Properties";
+import Badge from "../badge";
+import Button from "../../button";
+import { Card } from "@/mock/featured-properties";
 
 const PropertiesCard = ({ card }: { card: Card }) => {
   return (
@@ -18,8 +17,10 @@ const PropertiesCard = ({ card }: { card: Card }) => {
         />
       </section>
       <section>
-        <h3 className="text-[18px] font-semibold">Rustic Retreat Cottage</h3>
-        <p className="text-[14px] text-[#999999]">
+        <h3 className="text-[18px] md:text-2xl font-semibold">
+          Rustic Retreat Cottage
+        </h3>
+        <p className="text-[14px] md:text-lg text-[#999999]">
           {card.description + "  "}
           <Link className="text-white underline" href="#">
             Read more...

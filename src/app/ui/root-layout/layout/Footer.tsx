@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../Button";
+import Button from "../button";
 
 const Footer = () => {
   return (
@@ -177,7 +177,7 @@ const Footer = () => {
         </section>
       </section>
       <section className="bg-[#1A1A1A] w-full flex  gap-5 flex-col-reverse md:flex-row px-4 md:px-20 py-3 justify-between items-center text-white">
-        <div className="flex flex-row justify-between items-center container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center container mx-auto gap-6">
           <div className="flex flex-col text-center md:flex-row gap-5">
             <p className="text-nowrap">@2023 Estatein. All Rights Reserved.</p>
             <p>Terms & Conditions</p>
