@@ -7,26 +7,26 @@ import { Card } from "@/mock/featured-Properties";
 
 const PropertiesCard = ({ card }: { card: Card }) => {
   return (
-    <article className="flex flex-col gap-4 p-6 rounded-xl bg-[#141414]  border-[#262626] border-[1px] hover:bg-[#292929] text-white w-full">
+    <article className="flex h-[580px] flex-col justify-between gap-4 p-6 rounded-xl bg-[#141414]  border-[#262626] border-[1px] hover:bg-[#292929] text-white w-full">
       <section className=" relative w-full h-[210px] xl:h-[255px]">
         <Image
           src={card.image}
           alt="featured"
           style={{ objectFit: "cover" }}
           fill
-          className="rounded-t-[8px] object-cover"
+          className="rounded-[8px] object-cover"
         />
       </section>
       <section>
         <h3 className="text-[18px] font-semibold">Rustic Retreat Cottage</h3>
         <p className="text-[14px] text-[#999999]">
-          {card.description}
+          {card.description + "  "}
           <Link className="text-white underline" href="#">
-            Read More
+            Read more...
           </Link>
         </p>
-      </section>{" "}
-      <section className="flex flex-row flex-wrap justify-start items-center mt-4">
+      </section>
+      <section className="flex flex-row flex-wrap justify-start items-center mt-4 gap-2">
         {card.badges.map((badge, index) => {
           return (
             <Badge key={index}>
