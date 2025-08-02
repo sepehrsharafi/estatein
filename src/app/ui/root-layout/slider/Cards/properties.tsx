@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Badge from "../Badge";
+import Badge from "../badge";
 import Button from "../../Button";
-import { ReactElement } from "react";
-import { Card } from "@/mock/featured-Properties";
+import { Card } from "@/mock/featured-properties";
 
 const PropertiesCard = ({ card }: { card: Card }) => {
   return (
@@ -26,7 +25,7 @@ const PropertiesCard = ({ card }: { card: Card }) => {
           </Link>
         </p>
       </section>{" "}
-      <section className="flex flex-row flex-wrap justify-start items-center mt-4">
+      <section className="flex flex-row flex-wrap justify-start items-center mt-4 gap-2">
         {card.badges.map((badge, index) => {
           return (
             <Badge key={index}>
@@ -51,9 +50,11 @@ const PropertiesCard = ({ card }: { card: Card }) => {
       <section className="flex flex-row justify-between items-center mt-4">
         <div>
           <p className="text-sm text-[#999999] ">Price:</p>
-          <p className="text-lg font-semibold ">${card.price}</p>
+          <p className="text-lg font-semibold ">{card.price}</p>
         </div>
-        <Button variant="primary">View Property Details</Button>
+        <Button variant="primary" className=" text-nowrap">
+          View Property Details
+        </Button>
       </section>
     </article>
   );

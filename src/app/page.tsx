@@ -1,7 +1,7 @@
 import HeroSection from "./ui/home/hero-section";
-import CardListing from "./ui/root-layout/slider/CardListing";
-import { cards } from "@/mock/featured-Properties";
-import { clientSaysCard } from "@/mock/what-Our-Clients-Say";
+import CardListing from "./ui/root-layout/Slider/card-listing";
+import { cards } from "@/mock/featured-properties";
+import { clientSaysCard } from "@/mock/what-our-clients-say";
 
 export default function Page() {
   return (
