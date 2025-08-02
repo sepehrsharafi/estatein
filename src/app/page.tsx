@@ -7,7 +7,8 @@ export default function Page() {
   return (
     <>
       <HeroSection />
-      <CardListing
+      <Slider
+        options={OPTIONS}
         title="Featured Properties"
         description="Explore our handpicked selection of featured properties. Each
               listing offers a glimpse into exceptional homes and investments
