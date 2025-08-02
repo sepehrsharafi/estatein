@@ -915,10 +915,10 @@ export default function HeroSection() {
               </h2>
             </div>
             <div className="flex flex-col xl:flex-row gap-4 text-white text-sm 2xl:text-lg font-medium">
-              <button className="border-[1px] border-[#262626] rounded-lg w-full xl:w-fit py-3.5 px-5">
+              <button className="border-[1px] border-[#262626] rounded-lg w-full xl:w-fit py-3.5 px-5 hover:bg-neutral-700 transition-all duration-150">
                 Learn More
               </button>
-              <button className="rounded-lg w-full py-3.5 px-5 xl:w-fit bg-[#703BF7]">
+              <button className="rounded-lg w-full py-3.5 px-5 xl:w-fit bg-[#703BF7] hover:bg-blue-900 transition-all duration-150">
                 Browse Properties
               </button>
             </div>

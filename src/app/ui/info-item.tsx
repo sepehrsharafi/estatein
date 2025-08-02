@@ -11,7 +11,7 @@ export default function InformationItems({
     description: string;
   }) {
     return (
-      <article className="w-full flex flex-col items-center justify-center xl:items-start px-5 py-4 xl:py-5 gap-2 bg-[#1A1A1A] border-[1px] border-[#262626] rounded-lg xl:rounded-[10px] 2xl:rounded-xl">
+      <article className="w-full flex flex-col items-center justify-center xl:items-start px-5 py-4 xl:py-5 gap-2 bg-[#1A1A1A] hover:bg-neutral-700 border-[1px] border-[#262626] rounded-lg xl:rounded-[10px] 2xl:rounded-xl transition-all duration-150">
         <h3 className="text-white text-2xl xl:text-3xl 2xl:text-[40px] font-bold">
           {title}
         </h3>

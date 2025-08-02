@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${urbanist.className} antialiased`}>
         <Navbar />
-        {children}
+        <main className="container mx-auto"> {children}</main>
         <Footer />
       </body>
     </html>
