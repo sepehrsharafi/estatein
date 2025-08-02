@@ -5,7 +5,7 @@ import Button from "../Button";
 const Footer = () => {
   return (
     <>
-      <section className="px-4 relative flex flex-col md:flex-row mt-12  py-12 md:py-16 md:px-20 overflow-hidden  md:justify-between">
+      <section className="container mx-auto px-4 relative flex flex-col md:flex-row mt-12  py-12 md:py-16 md:px-20 overflow-hidden  md:justify-between">
         <div className="flex flex-col md:max-w-[980px] ">
           <h3 className=" text-[28px] md:text-[38px] 2xl:text-[48px] text-white  z-10">
             Start Your Real Estate Journey Today
@@ -52,7 +52,7 @@ const Footer = () => {
           alt="abstract"
         />
       </section>
-      <footer className="flex flex-col md:flex-row  items-start px-4 xl:px-20 w-full gap-14">
+      <footer className="container mx-auto flex flex-col md:flex-row  items-start px-4 xl:px-20 w-full gap-14">
         <section className="py-12 px-4  w-full flex flex-col gap-5 xl:w-[326px]">
           <div className="w-[113px] h-[34px] relative ">
             <Image
@@ -177,53 +177,55 @@ const Footer = () => {
         </section>
       </footer>
       <footer className="bg-[#1A1A1A] w-full flex gap-5 flex-col-reverse md:flex-row px-4 md:px-20 py-3 justify-between items-center text-white">
-        <div className="flex flex-col text-center md:flex-row gap-5">
-          <p className="text-nowrap">@2023 Estatein. All Rights Reserved.</p>
-          <p>Terms & Conditions</p>
-        </div>
-        <div className="flex flex-row gap-2">
-          <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
-            <Link href={""}>
-              <Image
-                src={"/icons/facebook.svg"}
-                alt="facebook"
-                width={20}
-                height={20}
-              />
-            </Link>
+        <div className="flex flex-row justify-between items-center container mx-auto">
+          <div className="flex flex-col text-center md:flex-row gap-5">
+            <p className="text-nowrap">@2023 Estatein. All Rights Reserved.</p>
+            <p>Terms & Conditions</p>
           </div>
+          <div className="flex flex-row gap-2">
+            <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
+              <Link href={""}>
+                <Image
+                  src={"/icons/facebook.svg"}
+                  alt="facebook"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </div>
 
-          <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
-            <Link href={""}>
-              <Image
-                src={"/icons/linkedin.svg"}
-                alt="linkedin"
-                width={20}
-                height={20}
-              />
-            </Link>
-          </div>
+            <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
+              <Link href={""}>
+                <Image
+                  src={"/icons/linkedin.svg"}
+                  alt="linkedin"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </div>
 
-          <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
-            <Link href={""}>
-              <Image
-                src={"/icons/tweeter.svg"}
-                alt="tweeter"
-                width={20}
-                height={20}
-              />
-            </Link>
-          </div>
+            <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
+              <Link href={""}>
+                <Image
+                  src={"/icons/tweeter.svg"}
+                  alt="tweeter"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </div>
 
-          <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
-            <Link href={""}>
-              <Image
-                src={"/icons/youtube.svg"}
-                alt="youtube"
-                width={20}
-                height={20}
-              />
-            </Link>
+            <div className="md:p-2.5 p-5 bg-[#141414] rounded-full">
+              <Link href={""}>
+                <Image
+                  src={"/icons/youtube.svg"}
+                  alt="youtube"
+                  width={20}
+                  height={20}
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </footer>

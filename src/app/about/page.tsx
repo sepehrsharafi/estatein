@@ -7,12 +7,12 @@ import MeetTheTeam from "../ui/about/meet-the-team";
 
 export default function Page() {
   return (
-    <main>
+    <>
       <HeroSection />
       <OurValues />
       <OurAchievements />
       <EstateinExperience />
       <MeetTheTeam />
-    </main>
+    </>
   );
 }

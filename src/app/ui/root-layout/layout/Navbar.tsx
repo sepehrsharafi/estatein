@@ -81,36 +81,38 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <nav className="hidden md:flex w-full px-20 2xl:px-40 2xl:py-5 py-3.5 bg-[#1A1A1A] fixed top-0 z-40  flex-row justify-between items-center ">
-        <div className="relative w-[112px] h-[34px] 2xl:w-[160px] 2xl:h-[48px]">
-          <Image
-            src={"/images/logo/logo.png"}
-            alt="logo"
-            fill
-            style={{ objectFit: "contain" }}
-          />
+      <nav className="hidden md:flex w-full px-20 2xl:px-40 2xl:py-5 py-3.5 bg-[#1A1A1A] fixed top-0 z-40  flex-row justify-between items-center">
+        <div className="flex flex-row justify-between items-center container mx-auto">
+          <div className="relative w-[112px] h-[34px] 2xl:w-[160px] 2xl:h-[48px]">
+            <Image
+              src={"/images/logo/logo.png"}
+              alt="logo"
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <div className="flex flex-row gap-6 ">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`  ${
+                    isActive
+                      ? "   bg-[#141414] text-white py-[12px] px-[20px] 2xl:px-[24px] 2xl:py-[12px] 2xl:text-lg rounded-[8px]  border-[#262626] border-[1px] hover:bg-[#292929]"
+                      : "text-white py-[12px] px-2 rounded-[8px] hover:bg-[#292929] 2xl:px-[24px] 2xl:py-[12px] 2xl:text-lg"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+          <Link href={"/contact"}>
+            <Button variant="secondary">Contact Us</Button>
+          </Link>
         </div>
-        <div className="flex flex-row gap-6 ">
-          {navLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`  ${
-                  isActive
-                    ? "   bg-[#141414] text-white py-[12px] px-[20px] 2xl:px-[24px] 2xl:py-[12px] 2xl:text-lg rounded-[8px]  border-[#262626] border-[1px] hover:bg-[#292929]"
-                    : "text-white py-[12px] px-2 rounded-[8px] hover:bg-[#292929] 2xl:px-[24px] 2xl:py-[12px] 2xl:text-lg"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </div>
-        <Link href={"/contact"}>
-          <Button variant="secondary">Contact Us</Button>
-        </Link>
       </nav>
     </>
   );

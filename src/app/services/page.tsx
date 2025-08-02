@@ -5,7 +5,7 @@ import InformationSectionAlt from "../ui/services/information-section-alt";
 
 export default function Page() {
   return (
-    <main>
+    <>
       <HeroSection
         title="Elevate Your Real Estate Experience"
         description="Welcome to Estatein, where your real estate aspirations meet expert guidance. Explore our comprehensive range of services, each designed to cater to your unique needs and dreams."
@@ -109,6 +109,6 @@ export default function Page() {
       />
 
       <InformationSectionAlt />
-    </main>
+    </>
   );
 }
