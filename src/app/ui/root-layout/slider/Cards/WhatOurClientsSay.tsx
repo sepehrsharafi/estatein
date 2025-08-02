@@ -1,18 +1,16 @@
-import { ClientSaysCard } from "@/mock/what-our-clients-say";
-import Image from "next/image";
+import { ClientSaysCard } from "@/mock/what-Our-Clients-Say";
 const WhatOurClientsSaysCard = ({ card }: { card: ClientSaysCard }) => {
-  const { title, address, description, image, name, stars } = card;
   return (
-    <article className="flex flex-col h-[305px] md:h-[442px] justify-between gap-4 p-6 md:p-12 rounded-xl bg-[#141414]  border-[#262626] border-[1px] hover:bg-[#292929] text-white w-full">
-      <section className="flex flex-row gap-2.5">
-        {[...Array(stars)].map((_, i) => (
+    <article className="flex flex-col gap-4 p-6 rounded-xl bg-[#141414]  border-[#262626] border-[1px] hover:bg-[#292929] text-white w-full">
+      <section className="flex flex-row gap-4">
+        {[...Array(card.stars)].map((_, i) => (
           <div
             key={i}
             className="p-2.5 rounded-full bg-[#292929] border-[#262626] border-[1px]"
           >
             <svg
-              width="24"
-              height="24"
+              width="22"
+              height="22"
               viewBox="0 0 22 22"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -24,21 +22,6 @@ const WhatOurClientsSaysCard = ({ card }: { card: ClientSaysCard }) => {
             </svg>
           </div>
         ))}
-      </section>
-      <section>
-        <div className="flex flex-col gap-3.5 ">
-          <h3 className="text-[18px] md:text-2xl font-semibold">{title}</h3>
-          <p className="text-[14px] md:text-lg font-medium">{description}</p>
-        </div>
-      </section>
-      <section className="flex flex-row gap-3 items-center">
-        <Image src={image} width={60} height={60} alt={name} />
-        <div className="flex flex-col gap-0.5">
-          <p className="md:text-xl text-[16px] font-medium">{name}</p>
-          <p className=" font-medium md:text-lg text-[14px] text-[#999999]">
-            {address}
-          </p>
-        </div>
       </section>
     </article>
   );
