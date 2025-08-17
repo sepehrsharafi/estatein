@@ -14,7 +14,7 @@ export const clientSaysCard: ClientSaysCard[] = [
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
     name: "Sarah Johnson",
     address: "New York, NY",
-    image: "/images/Profile.png",
+    image: "/images/profile.png",
   },
   {
     stars: 5,
