@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import Button from "../Button";
+import Button from "../button";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);

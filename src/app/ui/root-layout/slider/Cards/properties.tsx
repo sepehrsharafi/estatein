@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Badge from "../badge";
-import Button from "../../Button";
+import Button from "../../button";
 import { Card } from "@/mock/featured-properties";
 
 const PropertiesCard = ({ card }: { card: Card }) => {
