@@ -14,7 +14,7 @@ export const clientSaysCard: ClientSaysCard[] = [
       "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!",
     name: "Sarah Johnson",
     address: "New York, NY",
-    image: "/images/profile.png",
+    image: "/images/Profile.png",
   },
   {
     stars: 5,
@@ -23,7 +23,7 @@ export const clientSaysCard: ClientSaysCard[] = [
       "The agents went above and beyond to help us find the perfect property. Their market knowledge is unmatched!",
     name: "Michael Chen",
     address: "San Francisco, CA",
-    image: "/images/profile2.png",
+    image: "/images/Profile2.png",
   },
   {
     stars: 4,
@@ -32,7 +32,7 @@ export const clientSaysCard: ClientSaysCard[] = [
       "We found our ideal home faster than we expected. The team was responsive and understood our needs perfectly.",
     name: "David Wilson",
     address: "Chicago, IL",
-    image: "/images/profile3.png",
+    image: "/images/Profile3.png",
   },
   {
     stars: 5,
