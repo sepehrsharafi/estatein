@@ -27,7 +27,7 @@ export const cards: Card[] = [
       { key: "villa", val: 0 },
     ],
     price: "$750,000",
-    image: "/images/image.png",
+    image: "/images/image2.png",
   },
   {
     title: "Cozy Mountain Cabin",
@@ -38,7 +38,7 @@ export const cards: Card[] = [
       { key: "villa", val: 0 },
     ],
     price: "$450,000",
-    image: "/images/image.png",
+    image: "/images/image3.png",
   },
   {
     title: "Historic Townhouse",

@@ -23,7 +23,7 @@ export const clientSaysCard: ClientSaysCard[] = [
       "The agents went above and beyond to help us find the perfect property. Their market knowledge is unmatched!",
     name: "Michael Chen",
     address: "San Francisco, CA",
-    image: "/images/profile.png",
+    image: "/images/profile2.png",
   },
   {
     stars: 4,
@@ -32,7 +32,7 @@ export const clientSaysCard: ClientSaysCard[] = [
       "We found our ideal home faster than we expected. The team was responsive and understood our needs perfectly.",
     name: "David Wilson",
     address: "Chicago, IL",
-    image: "/images/profile.png",
+    image: "/images/profile3.png",
   },
   {
     stars: 5,
