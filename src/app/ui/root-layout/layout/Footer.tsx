@@ -5,8 +5,8 @@ import Button from "../button";
 const Footer = () => {
   return (
     <footer>
-      <section className="container mx-auto px-4 relative flex flex-col md:flex-row mt-12  py-12 md:py-16 md:px-20 overflow-hidden  md:justify-between">
-        <div className="flex flex-col md:max-w-[980px] ">
+      <section className="container mx-auto  px-4 relative flex flex-col md:flex-row mt-12  py-12 md:py-16 md:px-20 overflow-hidden  md:justify-between">
+        <div className="flex flex-col md:w-[860px] xl:max-w-[980px] ">
           <h3 className=" text-[28px] md:text-[38px] 2xl:text-[48px] text-white  z-10">
             Start Your Real Estate Journey Today
           </h3>
@@ -20,7 +20,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <Button variant="primary" className="mt-8 z-10 h-fit">
+        <Button variant="primary" className="mt-8 z-10 h-fit text-nowrap">
           Explore Properties
         </Button>
         <Image

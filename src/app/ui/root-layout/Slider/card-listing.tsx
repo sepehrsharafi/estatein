@@ -13,23 +13,38 @@ import { Card } from "@/mock/featured-properties";
 import { ClientSaysCard } from "@/mock/what-our-clients-say";
 import PropertiesCard from "./Cards/properties";
 import WhatOurClientsSaysCard from "./Cards/what-our-clients-say";
+import { AskedQuestionsCard } from "@/mock/asked-question";
+import FrequentlyAskedQuestionsCard from "./Cards/asked-questions-cards";
 
 interface CardListingProps {
   title: string;
   description?: string;
-  cards: Card[] | ClientSaysCard[];
+  viewText?: string;
+  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[];
 }
-function isCardArray(cards: Card[] | ClientSaysCard[]): cards is Card[] {
+function isCardArray(
+  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[]
+): cards is Card[] {
   return cards.length > 0 && "price" in cards[0];
 }
 
 function isClientSaysCardArray(
-  cards: Card[] | ClientSaysCard[]
+  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[]
 ): cards is ClientSaysCard[] {
   return cards.length > 0 && "stars" in cards[0];
 }
+function isAskedQuestionsCard(
+  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[]
+): cards is AskedQuestionsCard[] {
+  return cards.length > 0;
+}
 
-const CardListing = ({ title, description, cards }: CardListingProps) => {
+const CardListing = ({
+  title,
+  description,
+  cards,
+  viewText,
+}: CardListingProps) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
@@ -64,7 +79,6 @@ const CardListing = ({ title, description, cards }: CardListingProps) => {
       swiperRef.current.navigation.update();
     }
   }, []);
-  console.log(typeof cards);
   return (
     <section className="flex flex-col gap-10 mx-4 mt-20 xl:mx-[80px] 2xl:mx-[162px]">
       <div className="flex flex-row justify-between items-center">
@@ -76,8 +90,8 @@ const CardListing = ({ title, description, cards }: CardListingProps) => {
             </p>
           )}
         </div>
-        <Button variant="secondary" className="hidden md:block">
-          View All Properties
+        <Button variant="secondary" className="hidden md:block text-nowrap">
+          {viewText ?? " View All Properties"}
         </Button>
       </div>
 
@@ -125,6 +139,12 @@ const CardListing = ({ title, description, cards }: CardListingProps) => {
             cards.map((card, index) => (
               <SwiperSlide key={index}>
                 <WhatOurClientsSaysCard card={card} />
+              </SwiperSlide>
+            ))}
+          {isAskedQuestionsCard(cards) &&
+            cards.map((card, index) => (
+              <SwiperSlide key={index}>
+                <FrequentlyAskedQuestionsCard card={card} />
               </SwiperSlide>
             ))}
         </Swiper>

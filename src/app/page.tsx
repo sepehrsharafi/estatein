@@ -1,3 +1,4 @@
+import { askedQuestionsCard } from "@/mock/asked-question";
 import HeroSection from "./ui/home/hero-section";
 import CardListing from "./ui/root-layout/Slider/card-listing";
 import { cards } from "@/mock/featured-properties";
@@ -16,13 +17,16 @@ export default function Page() {
       />
       <CardListing
         title="What Our Clients Say"
+        viewText="View All Testimonials"
         description="Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs."
         cards={clientSaysCard}
       />
-      {/* <CardListing
+      <CardListing
         title="Frequently Asked Questions"
+        viewText="View All FAQs"
         description="Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way."
-      /> */}
+        cards={askedQuestionsCard}
+      />
     </main>
   );
 }

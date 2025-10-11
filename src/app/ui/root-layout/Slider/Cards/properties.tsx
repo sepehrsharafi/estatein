@@ -17,7 +17,7 @@ const PropertiesCard = ({ card }: { card: Card }) => {
         />
       </section>
       <section>
-        <h3 className="text-[18px] font-semibold">Rustic Retreat Cottage</h3>
+        <h3 className="text-[18px] font-semibold">{card.title}</h3>
         <p className="text-[14px] text-[#999999]">
           {card.description}
           <Link className="text-white underline" href="#">
