@@ -16,7 +16,7 @@ const FrequentlyAskedQuestionsCard = ({
       </h3>
       <p className="text-[14px] text-[#999999] md:text-4">{card.description}</p>
 
-      <section className="flex flex-row justify-between items-center mt-4 w-full md:w-[108px] ">
+      <section className="flex flex-row justify-between items-center mt-4 w-full md:w-[108px] xl:w-[134px] ">
         <Button variant="secondary" className=" text-nowrap w-full">
           Read more
         </Button>
