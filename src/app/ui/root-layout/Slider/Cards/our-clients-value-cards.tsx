@@ -10,7 +10,7 @@ const ClientValuesCard = ({ card }: { card: ClientValues }) => {
           <span className="text-[14px] text-[#999999] ">
             Since {card.since}
           </span>
-          <h3 className="text-[20px] font-semibold md:text-[24px] xl:txt-[30px] ">
+          <h3 className="text-[20px]  font-semibold md:text-[24px] xl:txt-[30px] ">
             {card.title}
           </h3>
         </div>
