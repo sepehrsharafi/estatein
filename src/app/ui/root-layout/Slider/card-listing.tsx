@@ -9,48 +9,37 @@ import "swiper/css/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import { NavigationOptions } from "swiper/types";
-import { Card } from "@/mock/featured-properties";
-import { ClientSaysCard } from "@/mock/what-our-clients-say";
-import PropertiesCard from "./Cards/properties";
-import WhatOurClientsSaysCard from "./Cards/what-our-clients-say";
-import { AskedQuestionsCard } from "@/mock/asked-question";
-import FrequentlyAskedQuestionsCard from "./Cards/asked-questions-cards";
 
-interface CardListingProps {
+interface CardListingProps<T> {
   title: string;
   description?: string;
   viewText?: string;
-  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[];
-}
-function isCardArray(
-  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[]
-): cards is Card[] {
-  return cards.length > 0 && "price" in cards[0];
-}
-
-function isClientSaysCardArray(
-  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[]
-): cards is ClientSaysCard[] {
-  return cards.length > 0 && "stars" in cards[0];
-}
-function isAskedQuestionsCard(
-  cards: Card[] | ClientSaysCard[] | AskedQuestionsCard[]
-): cards is AskedQuestionsCard[] {
-  return cards.length > 0;
+  cards: T[];
+  renderCard: (card: T, index: number) => React.ReactNode;
+  slidesPerView?: {
+    mobile?: number;
+    tablet?: number;
+    desktop?: number;
+  };
+  showViewAllButton?: boolean;
 }
 
-const CardListing = ({
+const CardListing = <T,>({
   title,
   description,
   cards,
+  renderCard,
   viewText,
-}: CardListingProps) => {
+  slidesPerView = { mobile: 1, tablet: 2, desktop: 3 },
+  showViewAllButton = true,
+}: CardListingProps<T>) => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isDesktop, setIsDesktop] = useState(false);
   const totalSlides = cards.length;
+
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
@@ -61,6 +50,7 @@ const CardListing = ({
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   useEffect(() => {
     if (
       swiperRef.current &&
@@ -79,6 +69,7 @@ const CardListing = ({
       swiperRef.current.navigation.update();
     }
   }, []);
+
   return (
     <section className="flex flex-col gap-10 mx-4 mt-20 xl:mx-[80px] 2xl:mx-[162px]">
       <div className="flex flex-row justify-between items-center">
@@ -90,15 +81,17 @@ const CardListing = ({
             </p>
           )}
         </div>
-        <Button variant="secondary" className="hidden md:block text-nowrap">
-          {viewText ?? " View All Properties"}
-        </Button>
+        {showViewAllButton && (
+          <Button variant="secondary" className="hidden md:block text-nowrap">
+            {viewText ?? " View All Properties"}
+          </Button>
+        )}
       </div>
 
       <div className="overflow-hidden">
         <Swiper
           spaceBetween={16}
-          slidesPerView={1}
+          slidesPerView={slidesPerView.mobile}
           slidesPerGroup={1}
           modules={[Navigation]}
           speed={300}
@@ -109,11 +102,11 @@ const CardListing = ({
           grabCursor={true}
           breakpoints={{
             640: {
-              slidesPerView: 2,
+              slidesPerView: slidesPerView.tablet,
               slidesPerGroup: 1,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: slidesPerView.desktop,
               slidesPerGroup: 1,
             },
           }}
@@ -129,36 +122,27 @@ const CardListing = ({
             disabledClass: "opacity-50 cursor-not-allowed",
           }}
         >
-          {isCardArray(cards) &&
-            cards.map((card, index) => (
-              <SwiperSlide key={index}>
-                <PropertiesCard card={card} />
-              </SwiperSlide>
-            ))}
-          {isClientSaysCardArray(cards) &&
-            cards.map((card, index) => (
-              <SwiperSlide key={index}>
-                <WhatOurClientsSaysCard card={card} />
-              </SwiperSlide>
-            ))}
-          {isAskedQuestionsCard(cards) &&
-            cards.map((card, index) => (
-              <SwiperSlide key={index}>
-                <FrequentlyAskedQuestionsCard card={card} />
-              </SwiperSlide>
-            ))}
+          {cards.map((card, index) => (
+            <SwiperSlide key={index}>{renderCard(card, index)}</SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
       <div className="flex flex-row gap-2.5 justify-between items-center border-t border-[#262626] pt-5">
-        <Button variant="secondary" className="md:hidden">
-          View All Properties
-        </Button>
-        <p className="text-sm hidden md:block text-white">
-          {String(isDesktop ? currentSlide + 2 : currentSlide).padStart(2, "0")}{" "}
+        {showViewAllButton && (
+          <Button variant="secondary" className="md:hidden text-nowrap">
+            {viewText ?? " View All Properties"}
+          </Button>
+        )}
+        <p className="text-sm hidden md:block text-white text-nowrap">
+          {String(
+            isDesktop
+              ? currentSlide + (slidesPerView.desktop ?? 3) - 1
+              : currentSlide
+          ).padStart(2, "0")}{" "}
           of {String(totalSlides).padStart(2, "0")}
         </p>
-        <div className="flex flex-row items-center text-white gap-2">
+        <div className="flex flex-row items-center  text-white gap-2 w-full md:w-fit justify-between md:justify-center">
           <button
             ref={prevRef}
             className="p-2.5 cursor-pointer bg-[#141414] border-[#262626] border hover:bg-[#292929] rounded-full"
@@ -170,7 +154,7 @@ const CardListing = ({
               height={24}
             />
           </button>
-          <p className="text-sm md:hidden">
+          <p className="text-sm md:hidden text-[14px] text-nowrap">
             {String(currentSlide).padStart(2, "0")} of{" "}
             {String(totalSlides).padStart(2, "0")}
           </p>
