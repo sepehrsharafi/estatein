@@ -24,7 +24,7 @@ const ClientValuesCard = ({ card }: { card: ClientValues }) => {
       </section>
 
       <section className="flex flex-row justify-between mt-4 w-full ">
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full pr-2">
           <div className="flex flex-row">
             <Image
               src={"/icons/domain.png"}
